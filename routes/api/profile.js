@@ -4,7 +4,8 @@ const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 
-router.get("/me", async (req, res) => {
+router.get("/me", auth, async (req, res) => {
+  console.log(req.user);
   try {
     const profile = await Profile.findOne({
       user: req.user.id,
