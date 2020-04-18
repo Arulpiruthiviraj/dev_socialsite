@@ -24,4 +24,15 @@ router.get("/me", auth, async (req, res) => {
   res.send("profile route");
 });
 
+router.post(`/`, [
+  auth,
+  [
+    check("status", "status is required").not().isEmpty(),
+    check("skills", "skills is required").not().isEmpty,
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+  },
+]);
+
 module.exports = router;
