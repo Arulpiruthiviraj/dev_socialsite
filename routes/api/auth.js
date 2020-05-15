@@ -19,7 +19,7 @@ router.get("", auth, async (req, res) => {
 });
 
 router.post(
-  "/",
+  "",
   [
     check("email", "Enter Valid Email").isEmail(),
     check("password", "Password is required").exists(),
