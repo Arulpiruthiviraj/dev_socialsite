@@ -11,6 +11,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
 import "./App.css";
+import Footer from "./components/layout/Footer";
 
 const App = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const App = () => {
             <Route exact path="/" component={Landing} />
             <Route component={Routes} />
           </Switch>
+          <Footer />
         </Fragment>
       </Router>
     </Provider>
