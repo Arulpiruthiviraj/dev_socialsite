@@ -23,8 +23,6 @@ router.get("/me", auth, async (req, res) => {
     console.log(err);
     res.status(500).send("Server error");
   }
-
-  res.send("profile route");
 });
 
 //create the profile

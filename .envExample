@@ -1,4 +1,4 @@
-  "mongoUrl": "mongodb+srv://arul123:1234@devconnector-dn6oq.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtsecret": "arulsecrettoken",
-  "githubClientId": "36849373d98eda28b39e",
-  "githubClientSecret": "ed2ea98d3a32c8073c5103c960fffc8cb05b3031  "
+MONGO_URL= 
+JWT_SECRET=
+GITHUB_CLIENT_ID= 
+GITHUB_CLIENT_SECRET=
