@@ -11,6 +11,8 @@ import {
   ACCOUNT_DELETED,
   GET_REPOS,
   NO_REPOS,
+  SEARCH_PROFILE,
+  SEARCH_ERROR,
 } from "./types";
 
 // Get current users profile
@@ -44,6 +46,23 @@ export const getProfiles = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// Search all profiles
+export const searchProfiles = () => async (dispatch) => {
+  try {
+    const res = await axios.get(`${baseUrl}/api/profile`);
+
+    dispatch({
+      type: SEARCH_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: SEARCH_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
     });
   }

@@ -317,4 +317,19 @@ router.get("/github/:username", async (req, res) => {
   }
 });
 
+//search route
+
+router.get("/search", async (req, res) => {
+  var regex = new RegExp("june", "i"); // 'i' makes it case insensitive
+  try {
+    const profiles = await Profile.find({
+      $text: { $search: regex },
+    }).populate("user", ["name", "avatar"]);
+    res.json(profiles);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;
